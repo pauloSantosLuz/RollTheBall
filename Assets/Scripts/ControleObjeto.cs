@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ControleObjeto : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public Transform posicao;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public ControleObjeto(GameObject objeto)
+	{
+		this.posicao = objeto.transform;
+	}
+
+	public void Roda()
+	{
+		this.posicao.transform.Rotate(Time.deltaTime,Time.deltaTime,Time.deltaTime);
+	}
 }
