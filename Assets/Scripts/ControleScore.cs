@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ControleScore : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public static int placar = 0;
+  public GameObject texto;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  public ControleScore(GameObject texto)
+  {
+  	this.texto = texto;
+  }
+
+  public void AtualizaPlacar()
+  {
+  	this.texto.GetComponent<Text>() = placar.ToString();
+  }
+
 }

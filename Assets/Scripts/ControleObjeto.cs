@@ -13,6 +13,6 @@ public class ControleObjeto : MonoBehaviour
 
 	public void Roda()
 	{
-		this.posicao.transform.Rotate(Time.deltaTime,Time.deltaTime,Time.deltaTime);
+		this.posicao.transform.Rotate(1f,1f,1f);
 	}
 }

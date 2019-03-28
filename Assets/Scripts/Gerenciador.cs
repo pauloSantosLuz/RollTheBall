@@ -18,8 +18,17 @@ public class Gerenciador : MonoBehaviour
 	void FixedUpdate()
 	{
 		controleJogador.ControleMovimento();
-		//for(int i = 0; i < 12; i++)
-			controleObjeto[1].Roda();
+		controleScore.AtualizaPlacar();
+		for(int i = 0; i < 11; i++)
+		{
+			try
+			{
+				controleObjeto[i].Roda();
+			}catch(MissingReferenceException erro)
+			{
+
+			}
+		}
 	}
 	void LateUpdate()
 	{
@@ -28,10 +37,11 @@ public class Gerenciador : MonoBehaviour
 
 	private void IniciaObjetos()
 	{
-		controleScore = new ControleScore();
+		controleScore = new ControleScore(GameObject.Find("QtdPontos"));
 		controleJogador = new ControleJogador();
 		controleCamera = new ControleCamera(controleJogador);
-		for(int i = 0; i < 12; i++)
-			controleObjeto[i] = new ControleObjeto(GameObject.Find("1"));
+
+		for(int i = 0; i < 11; i++)
+			controleObjeto[i] = new ControleObjeto(GameObject.Find(i.ToString()));
 	}
 }
