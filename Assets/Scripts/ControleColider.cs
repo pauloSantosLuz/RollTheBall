@@ -9,5 +9,6 @@ public class ControleColider : MonoBehaviour
     	ControleScore.placar++;
     	Debug.Log(ControleScore.placar);
     	Destroy(this.gameObject);
+    	ControleJogador.Slerp = true;
     }
 }
